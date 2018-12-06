@@ -8,6 +8,6 @@ class LuckyNumberNotificationHandler implements MessageHandlerInterface
 {
     public function __invoke(LuckyNumberNotification $message)
     {
-        // do something with it.
+        echo 'Received number: ' . $message->content . "\n";
     }
 }
