@@ -1,0 +1,25 @@
+---
+version: '2'
+services:
+  app:
+      build: docker
+      image: symfony-messaging-app
+      volumes:
+          - ./:/srv/app
+      entrypoint: ['bin/console', 'server:run', '0.0.0.0:8000']
+      ports:
+        - 8000:8000
+      links:
+          - rabbitmq
+      depends_on:
+        - rabbitmq
+          
+  rabbitmq:
+      image: rabbitmq:management
+      ports:
+          - "5672:5672"
+          - "15672:15672"
+      environment:
+          - RABBITMQ_DEFAULT_USER=devuser
+          - RABBITMQ_DEFAULT_PASS=devpass
+          - RABBITMQ_DEFAULT_VHOST=devhost
