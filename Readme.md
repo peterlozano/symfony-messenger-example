@@ -1,5 +1,7 @@
 Symfony Messenger Example
 
+Example simple project of sending and receiving messages using the Symfony Messenger component using AMQP with Rabbitmq.
+
 `docker-compose up`
 
 #### Produce a message
