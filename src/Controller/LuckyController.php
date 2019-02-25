@@ -11,6 +11,9 @@ class LuckyController
 {
     /**
      * @Route("/lucky/number")
+     * @param MessageBusInterface $bus
+     * @return Response
+     * @throws \Exception
      */
     public function number(MessageBusInterface $bus): Response
     {
